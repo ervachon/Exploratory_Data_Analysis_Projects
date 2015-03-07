@@ -56,7 +56,7 @@ lines(PowerConsumption[,c(10,8)], type="l", pch="", col="red")
 lines(PowerConsumption[,c(10,9)], type="l", pch="", col="blue")
 legend("topright",
        lty=c(1,1,1),
-       lwd=c(2.5,2.5),
+       #lwd=c(2,2),
        col=c("black", "red", "blue"),
        text.col=c("black", "red", "blue"),
        legend=c(colnames(PowerConsumption[7]),
