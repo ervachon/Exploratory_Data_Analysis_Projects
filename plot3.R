@@ -1,4 +1,4 @@
-# source("./projet_1/plot2.R")
+# source("plot2.R")
 
 # Construct the plot and save it to a PNG file with 
 # a width of 480 pixels and a height of 480 pixels.
@@ -18,7 +18,7 @@
 
 #import the date
 PowerConsumptionImport <- 
-    read.csv("./projet_1/household_power_consumption.txt",
+    read.csv("household_power_consumption.txt",
              sep =";", na.strings = "?",header = TRUE,
              stringsAsFactors=FALSE,
              colClasses = c("character","character","numeric",
@@ -49,12 +49,15 @@ PowerConsumption$Time <-
 #open device
 windows()
 
-#make the plot
+#make the plots
 plot(PowerConsumption[,c(10,7)],type="l",pch="",col="black", 
      ylab ="Global Active Power (kilowatts)",xlab="")
 lines(PowerConsumption[,c(10,8)], type="l", pch="", col="red")
 lines(PowerConsumption[,c(10,9)], type="l", pch="", col="blue")
 legend("topright",
+       lty=c(1,1,1),
+       lwd=c(2.5,2.5),
+       col=c("black", "red", "blue"),
        text.col=c("black", "red", "blue"),
        legend=c(colnames(PowerConsumption[7]),
                 colnames(PowerConsumption[8]),

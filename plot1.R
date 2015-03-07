@@ -1,4 +1,4 @@
-# source("./projet_1/plot1.R")
+# source("plot1.R")
 
 # Construct the plot and save it to a PNG file with 
 # a width of 480 pixels and a height of 480 pixels.
@@ -18,7 +18,7 @@
 
 #import the date
 PowerConsumptionImport <- 
-    read.csv("./projet_1/household_power_consumption.txt",
+    read.csv("household_power_consumption.txt",
              sep =";", na.strings = "?",header = TRUE,
              stringsAsFactors=FALSE,
              colClasses = c("character","character","numeric",
