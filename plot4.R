@@ -1,4 +1,4 @@
-# source("plot2.R")
+# source("plot4.R")
 
 # Construct the plot and save it to a PNG file with 
 # a width of 480 pixels and a height of 480 pixels.
