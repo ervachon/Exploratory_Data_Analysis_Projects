@@ -46,8 +46,8 @@ PowerConsumption$Date <-
 PowerConsumption$Time <- 
     strptime(PowerConsumption$Time, "%H:%M:%S")
 
-#open device
-windows()
+#open png
+png(file="plot3.png",width=480,height=480)
 
 #make the plots
 plot(PowerConsumption[,c(10,7)],type="l",pch="",col="black", 
@@ -63,7 +63,5 @@ legend("topright",
                 colnames(PowerConsumption[8]),
                 colnames(PowerConsumption[9]))
        )
-
-#copy plot into a 480x480 PNG
-dev.copy(png,filename="plot3.png", width=480, height=480);
+#close PNG
 dev.off ();

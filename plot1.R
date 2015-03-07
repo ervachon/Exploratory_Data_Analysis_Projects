@@ -43,8 +43,8 @@ PowerConsumption$Date <-
 PowerConsumption$Time <- 
     strptime(PowerConsumption$Time, "%H:%M:%S")
 
-#open device
-windows()
+#open png
+png(file="plot1.png",width=480,height=480)
 
 #make the plot
 hist(PowerConsumption$Global_active_power,
@@ -52,6 +52,5 @@ hist(PowerConsumption$Global_active_power,
      xaxp = c(0, 6, 3),yaxp = c(0, 1200, 6),
      xlab="Global Active Power (kilowatts)")
 
-#copy plot into a 480x480 PNG
-dev.copy(png,filename="plot1.png", width=480, height=480);
+#close PNG
 dev.off ();

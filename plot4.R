@@ -46,8 +46,8 @@ PowerConsumption$Date <-
 PowerConsumption$Time <- 
     strptime(PowerConsumption$Time, "%H:%M:%S")
 
-#open device
-windows()
+#open png
+png(file="plot4.png",width=480,height=480)
 
 par(mfrow = c(2, 2))
 
@@ -92,6 +92,5 @@ plot(PowerConsumption$DateTime,
      xlab="datetime",
      ylab ="Global_reactive_power")
 
-#copy plot into a 480x480 PNG
-dev.copy(png,filename="plot4.png", width=480, height=480);
+#Close PNG
 dev.off ();
