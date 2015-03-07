@@ -70,7 +70,7 @@ plot(PowerConsumption$DateTime,
 
 #make the plot 3
 plot(PowerConsumption[,c(10,7)],type="l",pch="",col="black", 
-     ylab ="Global Active Power (kilowatts)",xlab="")
+     ylab ="Energy sub metering",xlab="")
 lines(PowerConsumption[,c(10,8)], type="l", pch="", col="red")
 lines(PowerConsumption[,c(10,9)], type="l", pch="", col="blue")
 legend("topright",
