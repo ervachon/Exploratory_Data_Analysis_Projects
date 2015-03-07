@@ -1,7 +1,7 @@
 # Exploratory_Data_Analysis_Project 1 
 
 
-### Project 1 : 2015/03/8
+### Project 1 : 2015/03/08
 
 This repository containt the 4 scripts to make PNG files with household_power_consumption.txt
 
