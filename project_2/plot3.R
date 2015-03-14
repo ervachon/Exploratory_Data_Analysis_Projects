@@ -5,13 +5,6 @@
 # which of these four sources have seen decreases in emissions 
 # from 1999-2008 for Baltimore City (fips == "24510") ?
 
-# fips: A five-digit number (represented as a string) indicating the U.S.county
-# SCC: The name of the source as indicated by a digit string
-# Pollutant: A string indicating the pollutant
-# Emissions: Amount of PM2.5 emitted, in tons
-# type: The type of source (point, non-point, on-road, or non-road)
-# year: The year of emissions recorded
-
 if(!exists('NEI')) 
 {
    NEI <- readRDS("./exdata-data-NEI_data/summarySCC_PM25.rds")
@@ -24,10 +17,14 @@ if(!exists('SCC'))
 
 library(ggplot2)
 
+#subset by fips = 24510
 MyNEI <- subset(NEI,fips == "24510")
+#aggregate to sum
 Result <- aggregate(Emissions ~ year + type ,data = MyNEI,sum)
+#make a factor from type
 Result <- transform(Result,type_factor = factor(type))
 
+#start the plot
 g <- ggplot(   data   = Result    
              , aes(  x = year 
                    , y = Emissions 
@@ -37,6 +34,7 @@ g <- ggplot(   data   = Result
 g <- g + labs(colour = "Sources")
 g <- g + geom_point(size=4, shape=21, fill="white")
 
+# make a regression line
 g <- g + geom_smooth(  method = "lm"
                      , se=FALSE
                      , data= Result 
@@ -44,7 +42,7 @@ g <- g + geom_smooth(  method = "lm"
                              , y = Emissions 
                              , group  = type_factor 
                              , colour = type_factor ))
-
+#title
 g <- g + labs(title = "Evolution of Emmissions from PM2.5 by sources")
 
 # open PNG
