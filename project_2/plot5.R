@@ -1,3 +1,5 @@
+# plot5.R
+
 # How have emissions from motor vehicle sources changed 
 # from 1999-2008 in Baltimore City (fips == "24510") ? 
 
@@ -41,7 +43,7 @@ g <- g + geom_smooth(  method = "lm"
                      , size=1
                      , colour="darkred")
 g <- g + scale_fill_hue(name="Year")
-g <- g + labs(title = "Evolution of Emmissions from PM2.5 in Baltimore City from motor combustion")
+g <- g + labs(title = "Evolution of Emmissions from PM2.5 in Baltimore City\nfrom motor combustion")
 g <- g + labs(x = "Year")
 g <- g + labs(colour = "Year")
 

@@ -1,3 +1,5 @@
+# plot2.R
+
 # Have total emissions from PM2.5 decreased in the Baltimore City, Maryland 
 # (fips == "24510") from 1999 to 2008?
 
